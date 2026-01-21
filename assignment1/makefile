@@ -7,7 +7,6 @@ build: prebuild compile link
 
 # Link
 link: compile
-link: compile
 	g++ -o ./$(OUT_DIR)/$(FILE) ./$(OUT_DIR)/$(FILE).o
 
 # Compile
