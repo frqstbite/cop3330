@@ -11,25 +11,58 @@ const int MIN_CREDITS = 0;
 const int MAX_CREDITS = 180;
 
 
-// TODO: Define a struct named Student with the following fields:
-//       int id
-//       double gpa
-//       int credits
+struct Student {
+    int id;
+    double gpa;
+    int credits;
+};
 
-// TODO: Implement 
-// Student makeStudent(int id, double gpa, int credits);
+Student makeStudent(int id, double gpa, int credits) {
+    // Clamp GPA
+    if (gpa > MAX_GPA) {
+        gpa = MAX_GPA;
+    } else if (gpa < MIN_GPA) {
+        gpa = MIN_GPA;
+    }
 
-// TODO: Implement 
-// bool isValidStudent(Student& s);
+    // Clamp credits
+    if (credits > MAX_CREDITS) {
+        credits = MAX_CREDITS;
+    } else if (credits < MIN_CREDITS) {
+        credits = MIN_CREDITS;
+    }
 
-// TODO: Implement 
-// bool updateGPA(Student& s, double newGPA);
+    return Student { id, gpa, credits };
+}
 
-// TODO: Implement 
-// bool addCredits(Student& s, int creditsToAdd);
+bool isValidStudent(Student& s) {
+    // Validate GPA
+    if (s.gpa < MIN_GPA || s.gpa > MAX_GPA)
+        return false;
+    
+    // Validate credits
+    if (s.credits < MIN_CREDITS || s.credits > MAX_CREDITS)
+        return false;
+    
+    return true;
+}
 
-// TODO: Implement 
-// bool addCredits(Student& s);
+bool updateGPA(Student& s, double newGPA) {
+    if (newGPA < MIN_GPA || newGPA > MAX_GPA)
+        return false;
+    s.gpa = newGPA;
+    return true;
+}
+
+bool addCredits(Student& s, int creditsToAdd) {
+    if (creditsToAdd < 1)
+        return false;
+    return updateGPA(s, s.gpa + creditsToAdd);
+}
+
+bool addCredits(Student& s) {
+    return addCredits(s, 3);
+}
 
 //print function do not change
 void printStudent(const Student& s)
