@@ -15,7 +15,6 @@ compile: ./$(IN_DIR)/$(FILE).cpp
 
 # Create build directory
 prebuild:
-prebuild:
 	mkdir -p ./$(OUT_DIR)
 
 # Clean up build artifacts
