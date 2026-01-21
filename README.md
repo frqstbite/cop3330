@@ -23,10 +23,13 @@ server to inform the scriptwriting process.
 ### Script
 
 After the program has been sufficiently tested and the devlog has been
-finalized, the script is written to communicate the key points in the video.
-Code snippets are included to supplement the visuals added in post.
+finalized, a script is written to `script.md` to communicate the key points in
+the video. Code snippets are included to supplement the visuals added in post.
 
 ### Video
+
+Finally, the video is composited in [Motion Canvas][motioncanvas], the project
+for which is stored in the assignment's `video` folder.
 
 ## License
 
