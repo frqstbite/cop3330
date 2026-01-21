@@ -7,6 +7,7 @@ build: prebuild compile link
 
 # Link
 link: compile
+link: compile
 	g++ -o ./$(OUT_DIR)/$(FILE) ./$(OUT_DIR)/$(FILE).o
 
 # Compile
@@ -14,6 +15,7 @@ compile: ./$(IN_DIR)/$(FILE).cpp
 	g++ -c ./$(IN_DIR)/$(FILE).cpp -o ./$(OUT_DIR)/$(FILE).o
 
 # Create build directory
+prebuild:
 prebuild:
 	mkdir -p ./$(OUT_DIR)
 
