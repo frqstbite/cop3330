@@ -63,9 +63,16 @@ bool updateGPA(Student& s, double newGPA) {
 
 ```cpp
 bool addCredits(Student& s, int creditsToAdd) {
+    // Must add positive number of credits
     if (creditsToAdd < 1)
         return false;
-    return updateGPA(s, s.gpa + creditsToAdd);
+    
+    // Bound to limits
+    if (s.credits + creditsToAdd < MIN_CREDITS || s.credits + creditsToAdd > MAX_CREDITS)
+        return false;
+
+    s.credits += creditsToAdd;
+    return true;
 }
 ```
 
