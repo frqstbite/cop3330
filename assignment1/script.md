@@ -94,7 +94,20 @@ implementation of this program. With that out of the way, we can begin coding.
 
 ## Student (2.1)
 
+The first thing we need to implement is the `Student` struct. A `Student`
+should have an integer ID (`int id`), a floating-point GPA (`double gpa`), and
+an amount of credits represented by another integer (`int credits`). Simple
+enough.
+
 ## makeStudent (2.2.1)
+
+Now that we've defined the `Student` struct, we need to write a constructor for
+it. In this program, that will take the form of a `makeStudent()` function. As
+input, it should take the three pieces of data we associate with a `Student`.
+A naive first step would be to return a new `Student` verbatim. This *is* the
+last line that we need, but theres some boundary checks we need to implement
+first. If the supplied GPA overflows or underflows our GPA boundaries, we need
+to clamp it. The same goes for the credits and credit boundaries.
 
 ## isValidStudent (2.2.2)
 
