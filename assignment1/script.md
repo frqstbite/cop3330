@@ -1,5 +1,11 @@
 # Assignment 1 Script
 
+## Intro
+
+Hey. My name is Ashi Meide, and I'm taking COP3330 during the Spring 2026
+semester. This video is intended to be submitted alongside my code for
+assignment 1.
+
 ## Expected Output
 
 For the purposes of this assignment, our `main()` function will run our test
@@ -85,3 +91,15 @@ true
 
 This gives us the complete output we should expect from a functioning
 implementation of this program. With that out of the way, we can begin coding.
+
+## Outro
+
+This video was composited through [Motion Canvas][motioncanvas],
+an open source [TypeScript] library for creating animated videos using the
+[Canvas API][canvasapi]. The full source code that generated this video,
+alongside my complete solution for assignment 1, can be found in an unlicensed
+GitHub repository available in this video's description. Thank you.
+
+[motioncanvas]: https://motioncanvas.io
+[typescript]: https://www.typescriptlang.org
+[canvasapi]: https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API
