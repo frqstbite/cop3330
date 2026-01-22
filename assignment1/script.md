@@ -92,6 +92,16 @@ true
 This gives us the complete output we should expect from a functioning
 implementation of this program. With that out of the way, we can begin coding.
 
+## Student (2.1)
+
+## makeStudent (2.2.1)
+
+## isValidStudent (2.2.2)
+
+## updateGPA (2.2.3)
+
+## addCredits (2.2.4 & 2.2.5)
+
 ## Outro
 
 This video was composited through [Motion Canvas][motioncanvas],
