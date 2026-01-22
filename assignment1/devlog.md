@@ -1,5 +1,37 @@
 # Assignment 1 Devlog
 
+## Expected Output
+
+```
+999 3.8 25
+
+true
+true
+999 4 25
+
+false
+false
+999 4 25
+
+false
+false
+999 4 25
+
+true
+999 4 28
+
+999 4 177
+
+true
+999 4 178
+
+100 4 10
+true
+
+101 3 0
+true
+```
+
 ## 2.1 `Student`
 
 ```cpp
