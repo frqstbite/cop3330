@@ -117,20 +117,36 @@ to clamp it. The same goes for the credits and credit boundaries.
 
 Next, we need to write a simple validation function for our `Student` struct.
 Since there's only two ways a `Student` can be invalid, we'll have two
-bounary checks. One will check the GPA, and the other will check the credits.
+bounary checks; one will check the GPA, and the other will check the credits.
 If both checks pass, the `Student` is valid. Light work.
 
 ### updateGPA (2.2.3)
 
 The next function we need to implement is a setter for a `Student`'s GPA.
-A naive implementation would set the GPA and be done with it, but, as I'm sure
-you forsaw, a boundary check 
+A naive implementation would set the GPA and be done with it, but we also need
+to make sure the new GPA is within our limits.
 
 ### addCredits (2.2.4 & 2.2.5)
 
+Finally, we need a function to add to a `Student`'s credits, with two
+stipulations. We need the number of credits we want to add, called
+`creditsToAdd` here, to be positive. We also don't want to exceed the upper
+bound for a `Student`'s credits. We will only add the credits if both
+stipulation are satisfied.
 
+Oh, and, uh, we need an overload too. It just adds 3 credits if an amount is
+not specified. Could've been implemented with a default parameter value, but...
+whatever. Maybe it does the same thing under the hood.
+
+With that, we've implemented our `Student` struct and the required satellite
+functions.
 
 ## Compare Output
+
+Upon running our completed file, we receive the results we predicted earlier.
+While I did, for the most part, get the correct output on my first attempt, I
+excluded some minor bug fixing I had to do in favor of a detailed explanation
+of why the final implementation looks and behaves the way it does.
 
 ## Outro
 
