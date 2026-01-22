@@ -90,16 +90,20 @@ true
 ```
 
 This gives us the complete output we should expect from a functioning
-implementation of this program. With that out of the way, we can begin coding.
+implementation of this program.
 
-## Student (2.1)
+## Implementations
+
+With that out of the way, we can begin coding.
+
+### Student (2.1)
 
 The first thing we need to implement is the `Student` struct. A `Student`
 should have an integer ID (`int id`), a floating-point GPA (`double gpa`), and
 an amount of credits represented by another integer (`int credits`). Simple
 enough.
 
-## makeStudent (2.2.1)
+### makeStudent (2.2.1)
 
 Now that we've defined the `Student` struct, we need to write a constructor for
 it. In this program, that will take the form of a `makeStudent()` function. As
@@ -109,11 +113,24 @@ last line that we need, but theres some boundary checks we need to implement
 first. If the supplied GPA overflows or underflows our GPA boundaries, we need
 to clamp it. The same goes for the credits and credit boundaries.
 
-## isValidStudent (2.2.2)
+### isValidStudent (2.2.2)
 
-## updateGPA (2.2.3)
+Next, we need to write a simple validation function for our `Student` struct.
+Since there's only two ways a `Student` can be invalid, we'll have two
+bounary checks. One will check the GPA, and the other will check the credits.
+If both checks pass, the `Student` is valid. Light work.
 
-## addCredits (2.2.4 & 2.2.5)
+### updateGPA (2.2.3)
+
+The next function we need to implement is a setter for a `Student`'s GPA.
+A naive implementation would set the GPA and be done with it, but, as I'm sure
+you forsaw, a boundary check 
+
+### addCredits (2.2.4 & 2.2.5)
+
+
+
+## Compare Output
 
 ## Outro
 
