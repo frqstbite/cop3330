@@ -14,7 +14,7 @@ compile: ./$(IN_DIR)/$(FILE).cpp
 	g++ -c ./$(IN_DIR)/$(FILE).cpp -o ./$(OUT_DIR)/$(FILE).o
 
 # Create build directory
-prebuild:
+prebuild: clean
 	mkdir -p ./$(OUT_DIR)
 
 # Clean up build artifacts
