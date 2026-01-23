@@ -19,7 +19,7 @@ the expected output on the right.
 
 First, we make an initial `Student` struct and print it out. Since we don't
 write the printing logic, this is moreso about making sure that our `Student`
-struct definition is structured correctly, because otherwise the `printStudent`
+definition is structured correctly, because otherwise the `printStudent`
 function would blow up in our face.
 ```
 999 3.8 25
@@ -71,7 +71,7 @@ credits.
 
 Then we make sure that our overload for `addCredits()` that allows us to
 specify the credit amount behaves as we expect by attempting to add one
-credit and print the result.
+credit and printing the result.
 ```
 true
 999 4 178
@@ -94,7 +94,7 @@ implementation of this program.
 
 ## Implementations
 
-With that out of the way, we can begin coding.
+Now that we've squared that away, we can begin coding.
 
 ### Student (2.1)
 
