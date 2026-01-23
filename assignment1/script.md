@@ -45,7 +45,7 @@ false
 999 4 25
 ```
 
-Next, we check for the `addCredit()` function's ability to validate its
+Next, we check for the `addCredits()` function's ability to validate its
 arguments. The number passed must be positive, excluding zero, so both of these
 calls should fail. The printed student should be unchanged.
 ```
@@ -54,7 +54,7 @@ false
 999 4 25
 ```
 
-The `addCredit()` function should also have an overload that automatically adds
+The `addCredits()` function should also have an overload that automatically adds
 three credits. We're well below the upper limit of credits, so this call should
 succeed and output `true` followed by the modified `Student`.
 ```
