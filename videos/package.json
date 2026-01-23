@@ -1,14 +1,14 @@
 {
-  "name": "assignment1",
+  "name": "cop3330",
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "serve": "npx vite --host",
-    "build": "tsc && npx vite build"
+    "serve": "npx vite --host"
   },
   "dependencies": {
-    "@motion-canvas/core": "^3.17.2",
+    "@lezer/cpp": "^1.1.5",
     "@motion-canvas/2d": "^3.17.2",
+    "@motion-canvas/core": "^3.17.2",
     "@motion-canvas/ffmpeg": "^1.1.0"
   },
   "devDependencies": {
