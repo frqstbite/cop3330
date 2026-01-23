@@ -1,22 +1,12 @@
-# Define variables
-IN_DIR = solution
-OUT_DIR = build
-FILE = driver
+# Overridden by exterior build script
+OUT_DIR ?= build
 
-build: prebuild compile link
+build: link
 
 # Link
 link: compile
-	g++ -o ./$(OUT_DIR)/$(FILE) ./$(OUT_DIR)/$(FILE).o
+	g++ -o ./$(OUT_DIR)/driver ./$(OUT_DIR)/driver.o
 
 # Compile
-compile: ./$(IN_DIR)/$(FILE).cpp
-	g++ -c ./$(IN_DIR)/$(FILE).cpp -o ./$(OUT_DIR)/$(FILE).o
-
-# Create build directory
-prebuild: clean
-	mkdir -p ./$(OUT_DIR)
-
-# Clean up build artifacts
-clean:
-	rm -rf ./$(OUT_DIR)
+compile: ./solution/driver.cpp
+	g++ -c ./solution/driver.cpp -o ./$(OUT_DIR)/driver.o
