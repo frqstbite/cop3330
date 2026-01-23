@@ -45,7 +45,7 @@ false
 999 4 25
 ```
 
-Next, we check for the `addCredit()` function's ability to validate its
+Next, we check for the `addCredits()` function's ability to validate its
 arguments. The number passed must be positive, excluding zero, so both of these
 calls should fail. The printed student should be unchanged.
 ```
@@ -54,7 +54,7 @@ false
 999 4 25
 ```
 
-The `addCredit()` function should also have an overload that automatically adds
+The `addCredits()` function should also have an overload that automatically adds
 three credits. We're well below the upper limit of credits, so this call should
 succeed and output `true` followed by the modified `Student`.
 ```
@@ -117,7 +117,7 @@ to clamp it. The same goes for the credits and credit boundaries.
 
 Next, we need to write a simple validation function for our `Student` struct.
 Since there's only two ways a `Student` can be invalid, we'll have two
-bounary checks; one will check the GPA, and the other will check the credits.
+boundary checks; one will check the GPA, and the other will check the credits.
 If both checks pass, the `Student` is valid. Light work.
 
 ### updateGPA (2.2.3)
