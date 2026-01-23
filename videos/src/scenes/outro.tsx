@@ -3,6 +3,7 @@ import { createRef, Vector2 } from "@motion-canvas/core";
 
 export default makeScene2D(function* (view) {
     // Create your animations here
+
     const circle = createRef<Circle>();
 
     view.add(<Circle ref={circle} size={320} fill={"lightseagreen"} />);
