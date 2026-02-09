@@ -10,6 +10,7 @@
 **/*.sw?
 
 # Assignment build artifacts
+*.tar*
 build/
 assignment*/build/
 
