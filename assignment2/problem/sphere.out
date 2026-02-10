@@ -1,0 +1,110 @@
+Print summaries
+Summary Sphere 1
+        Radius:        1.00000
+         Color:         Yellow
+      Diameter:        2.00000
+        Volume:        4.18879
+  Surface Area:       12.56636
+
+Summary Sphere 2
+        Radius:        2.50000
+         Color:          Green
+      Diameter:        5.00000
+        Volume:       65.44979
+  Surface Area:       78.53975
+
+Summary Sphere 3
+        Radius:        1.54000
+         Color:         Purple
+      Diameter:        3.08000
+        Volume:       15.29855
+  Surface Area:       29.80238
+
+Summary Sphere 4
+        Radius:        5.00000
+         Color:         Yellow
+      Diameter:       10.00000
+        Volume:      523.59833
+  Surface Area:      314.15900
+
+Summary Sphere 5
+        Radius:       32.32000
+         Color:          Green
+      Diameter:       64.64000
+        Volume:   141417.22104
+  Surface Area:    13126.59849
+
+--> Growing Spheres by 2.50000
+Print summaries
+Summary Sphere 1
+        Radius:           3.50
+         Color:         Yellow
+      Diameter:           7.00
+        Volume:         179.59
+  Surface Area:         153.94
+
+Summary Sphere 2
+        Radius:           5.00
+         Color:          Green
+      Diameter:          10.00
+        Volume:         523.60
+  Surface Area:         314.16
+
+Summary Sphere 3
+        Radius:           4.04
+         Color:         Purple
+      Diameter:           8.08
+        Volume:         276.21
+  Surface Area:         205.10
+
+Summary Sphere 4
+        Radius:           7.50
+         Color:         Yellow
+      Diameter:          15.00
+        Volume:        1767.14
+  Surface Area:         706.86
+
+Summary Sphere 5
+        Radius:          34.82
+         Color:          Green
+      Diameter:          69.64
+        Volume:      176837.57
+  Surface Area:       15235.86
+
+--> Shrinking Spheres by 2.00
+Print summaries
+Summary Sphere 1
+        Radius:           1.50
+         Color:         Yellow
+      Diameter:           3.00
+        Volume:          14.14
+  Surface Area:          28.27
+
+Summary Sphere 2
+        Radius:           3.00
+         Color:          Green
+      Diameter:           6.00
+        Volume:         113.10
+  Surface Area:         113.10
+
+Summary Sphere 3
+        Radius:           2.04
+         Color:         Purple
+      Diameter:           4.08
+        Volume:          35.56
+  Surface Area:          52.30
+
+Summary Sphere 4
+        Radius:           5.50
+         Color:         Yellow
+      Diameter:          11.00
+        Volume:         696.91
+  Surface Area:         380.13
+
+Summary Sphere 5
+        Radius:          32.82
+         Color:          Green
+      Diameter:          65.64
+        Volume:      148082.58
+  Surface Area:       13535.88
+
