@@ -28,18 +28,11 @@ the `problem/` directory for immediate reference. The attempted solution will
 be under the `solution/` directory, from which the `makefile` for the
 assignment will build.
 
-### Devlog
-
-Each assignment has a `devlog.md` file describing the authentic, real-time
-experience of writing and debugging the program. This devlog will primarily
-serve to inform the scriptwriting process.
-
 ### Script
 
-After the program has been sufficiently tested and the devlog has been
-finalized, a script is written to `script.md` to communicate the key points in
-the video. Code snippets are included to supplement the visuals added in post
-when necessary.
+After the program has been sufficiently tested, a script is written to
+`script.md` to communicate the key points in the video. Code snippets are
+included to supplement the visuals added in post when necessary.
 
 ## License
 
