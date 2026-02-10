@@ -13,7 +13,7 @@ cases. To determine if the code is written correctly, we need to know what we
 should expect the output of these test cases to be. Since it's not provided to
 us, it wouldn't hurt to start by figuring that out first.
 
-This is the full source code for the `main()` function. It is *hefty* at 34
+This is the full source code for the `main()` function. It is _hefty_ at 34
 lines, excluding whitespace. I'm going to break it down piece-by-piece and put
 the expected output on the right.
 
@@ -21,6 +21,7 @@ First, we make an initial `Student` struct and print it out. Since we don't
 write the printing logic, this is moreso about making sure that our `Student`
 definition is structured correctly, because otherwise the `printStudent`
 function would blow up in our face.
+
 ```
 999 3.8 25
 ```
@@ -30,6 +31,7 @@ GPA and credits are supposed to be inclusive, which means that both of these
 calls to `updateGPA()` should succeed and output `true`. Finally, of course,
 the printed `Student` struct should reflect the most recent update to the GPA,
 which we see here is `4`.
+
 ```
 true
 true
@@ -39,6 +41,7 @@ true
 The next block of tests check what happens if the GPA boundary is exceeded. In
 both cases here it should output `false` for underflowing and overflowing the
 boundary, respectively, followed by the unchanged student.
+
 ```
 false
 false
@@ -48,6 +51,7 @@ false
 Next, we check for the `addCredits()` function's ability to validate its
 arguments. The number passed must be positive, excluding zero, so both of these
 calls should fail. The printed student should be unchanged.
+
 ```
 false
 false
@@ -57,6 +61,7 @@ false
 The `addCredits()` function should also have an overload that automatically adds
 three credits. We're well below the upper limit of credits, so this call should
 succeed and output `true` followed by the modified `Student`.
+
 ```
 true
 999 4 28
@@ -65,6 +70,7 @@ true
 Next, we directly assign the `Student`'s credits to be 3 short of the maximum
 and print out the result. With a maximum of 180, the `Student` should have 177
 credits.
+
 ```
 999 4 177
 ```
@@ -72,6 +78,7 @@ credits.
 Then we make sure that our overload for `addCredits()` that allows us to
 specify the credit amount behaves as we expect by attempting to add one
 credit and printing the result.
+
 ```
 true
 999 4 178
@@ -82,6 +89,7 @@ produced by the `makeStudent()` function passes the `isValidStudent()` smell-
 test. This probably should've been checked earlier, but... better late than
 never, I guess. Since `makeStudent()` clamps our GPA and credit values, the
 resulting `Student`s should be completely valid.
+
 ```
 100 4 10
 true
@@ -91,6 +99,28 @@ true
 
 This gives us the complete output we should expect from a functioning
 implementation of this program.
+
+```
+999 3.8 25
+true
+true
+999 4 25
+false
+false
+999 4 25
+false
+false
+999 4 25
+true
+999 4 28
+999 4 177
+true
+999 4 178
+100 4 10
+true
+101 3 0
+true
+```
 
 ## Implementations
 
@@ -108,7 +138,7 @@ enough.
 Now that we've defined the `Student` struct, we need to write a constructor for
 it. In this program, that will take the form of a `makeStudent()` function. As
 input, it should take the three pieces of data we associate with a `Student`.
-A naive first step would be to return a new `Student` verbatim. This *is* the
+A naive first step would be to return a new `Student` verbatim. This _is_ the
 last line that we need, but theres some boundary checks we need to implement
 first. If the supplied GPA overflows or underflows our GPA boundaries, we need
 to clamp it. The same goes for the credits and credit boundaries.
