@@ -26,6 +26,10 @@ MIN_CREDITS = 0, MAX_CREDITS = 180
 Your implementation must ensure that GPA and credits always remain within these
 ranges.
 
+## Permitted Libraries
+
+* `<iostream>`
+
 ## Implementations
 
 ### 2.1 Define the `Student` Structure

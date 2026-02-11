@@ -16,6 +16,13 @@ the functionality of your class as well. Most questions about the required
 behavior of the class and the expected output can be determined by carefully
 examining the driver program and the sample execution.
 
+## Permitted Libraries
+
+* `<cstdlib>`
+* `<ctime>`
+* `<iomanip>`
+* `<iostream>`
+
 ## Class Specification
 
 ### Fields
