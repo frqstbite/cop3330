@@ -17,7 +17,7 @@ test:
 
 submit:
 	@echo 'Submitting Assignment 2...'
-	@tar -czf ../assignment2.tar.gz                               \
+	@tar -czf ../sphere.tar.gz                               \
 		-C ..                                                     \
 			common.mk                                             \
 			assignment.mk                                         \
@@ -25,5 +25,5 @@ submit:
 			assignment2/{makefile,solution/{sphere.cpp,sphere.h}} \
 		-C assignment2/solution                                   \
 			README.md
-	@tar -tzf ../assignment2.tar.gz | tree --fromfile .
-	@echo 'Created assignment2.tar.gz for submission.'
+	@tar -tzf ../sphere.tar.gz | tree --fromfile .
+	@echo 'Created sphere.tar.gz for submission.'
