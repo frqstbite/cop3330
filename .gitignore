@@ -13,7 +13,3 @@
 *.tar*
 *.o
 *.pch
-
-# Motion Canvas files
-videos/node_modules/
-videos/output/

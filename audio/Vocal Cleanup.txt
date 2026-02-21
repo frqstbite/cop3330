@@ -1,7 +1,0 @@
-Comment:_="NOISE PROFILE REQUIRED"
-Normalize:ApplyVolume="1" PeakLevel="-10" RemoveDcOffset="1" StereoIndependent="0"
-NoiseReduction:Use_Preset="<Current Settings>"
-FilterCurve:f0="100.13707" f1="100.13707" f2="1935.415" f3="2269.8747" f4="3481.9603" f5="4049.5617" f6="16165.778" f7="22050" FilterLength="8191" InterpolateLin="0" InterpolationMethod="B-spline" v0="-43.161861" v1="0.055432647" v2="0.21729502" v3="2.4833703" v4="2.3215079" v5="0.055432647" v6="1.8359209" v7="2.3215079"
-Compressor:attackMs="30" compressionRatio="2" kneeWidthDb="5" lookaheadMs="1" makeupGainDb="0" releaseMs="150" showActual="1" showInput="0" showOutput="1" showTarget="0" thresholdDb="-20"
-Normalize:ApplyVolume="1" PeakLevel="-2" RemoveDcOffset="1" StereoIndependent="0"
-NoiseGate:ATTACK="10" DECAY="100" GATE-FREQ="0" HOLD="50" LEVEL-REDUCTION="-26" MODE="Gate" STEREO-LINK="LinkStereo" THRESHOLD="-40"
