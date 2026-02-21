@@ -1,3 +1,3 @@
 #!/usr/bin/env sh
 
-assignment3/submission/date | diff -u assignment3/scripts/date.out -
+date | diff -u ../scripts/date.out -

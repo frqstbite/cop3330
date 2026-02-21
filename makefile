@@ -35,12 +35,12 @@ build: _validate
 
 test: _validate build
 	@echo 'Running tests for assignment $(ASSIGNMENT)...'
-	@assignment$(ASSIGNMENT)/scripts/test.sh
+	@cd assignment$(ASSIGNMENT); scripts/test.sh
 	@echo 'Tests passed!'
 
-submit: _validate test
+submit: _validate test clean
 	@echo 'Submitting assignment $(ASSIGNMENT)...'
-	@assignment$(ASSIGNMENT)/scripts/submit.sh
+	@cd assignment$(ASSIGNMENT); scripts/submit.sh
 
 clean: _validate
 	@cd assignment$(ASSIGNMENT)/submission; ../scripts/clean.sh

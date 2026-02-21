@@ -1,3 +1,3 @@
 #!/usr/bin/env sh
 
-assignment1/submission/driver | diff -u assignment1/scripts/driver.out -
+driver | diff -u ../scripts/driver.out -
