@@ -5,8 +5,12 @@ import intro from './scenes/intro?scene';
 import expectedOutput from './scenes/assignment1/expectedOutput?scene';
 import outro from './scenes/outro?scene';
 
+import audio from '@assets/assignment1.mp3?url';
+import logo from './scenes/logo?scene';
+
 export default makeProject({
-    scenes: [intro, expectedOutput, outro],
+    audio,
+    scenes: [intro, expectedOutput, outro, logo],
     variables: {
         assignment: 1,
         theme: {

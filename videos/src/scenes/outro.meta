@@ -1,5 +1,14 @@
 {
   "version": 0,
-  "timeEvents": [],
+  "timeEvents": [
+    {
+      "name": "fade",
+      "targetTime": 3.1879107261067237
+    },
+    {
+      "name": "x",
+      "targetTime": 5.237536027557293
+    }
+  ],
   "seed": 702746812
 }

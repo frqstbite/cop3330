@@ -1,24 +1,11 @@
+import { zoomTransition } from "@/common";
 import { Layout, makeScene2D, SVG, Txt } from "@motion-canvas/2d";
-import {
-    createRef,
-    createSignal,
-    fadeTransition,
-    useScene,
-    Vector2,
-} from "@motion-canvas/core";
-
-import logo from "@assets/motioncanvas.svg?raw";
+import { useScene, waitUntil } from "@motion-canvas/core";
 
 export default makeScene2D(function* (view) {
     const scene = useScene();
     const theme = scene.variables.get("theme", null);
     const assignment = scene.variables.get("assignment", 0);
-
-    // Refs
-    const logoRef = createRef<SVG>();
-
-    // Determine header from assignment #
-    const headerSignal = createSignal();
 
     // Scene
     view.add(
@@ -27,7 +14,7 @@ export default makeScene2D(function* (view) {
             alignItems={"center"}
             direction={"column"}
             gap={25}
-            height={"100%"}
+            height={"50%"}
             justifyContent={"center"}
         >
             <Txt
@@ -45,16 +32,15 @@ export default makeScene2D(function* (view) {
                 textAlign={"center"}
             />
 
-            <SVG
-                ref={logoRef}
+            <Txt
                 fill={() => theme().text}
-                svg={logo}
-                size={[400, 400]}
+                fontFamily={() => theme().fontFamily}
+                text="Spring 2026"
+                textAlign={"center"}
             />
         </Layout>,
     );
 
-    yield* fadeTransition(1);
-    yield* logoRef().scale(2, 2).to(1, 2);
-    yield* logoRef().position(new Vector2(100, 100), 2).to(Vector2.zero, 2);
+    yield* zoomTransition();
+    yield* waitUntil("x");
 });

@@ -1,20 +1,15 @@
+import { zoomTransition } from "@/common";
 import { Code, insert, makeScene2D, remove, replace } from "@motion-canvas/2d";
-import {
-    BBox,
-    createRef,
-    createSignal,
-    waitUntil,
-    zoomOutTransition,
-} from "@motion-canvas/core";
+import { createRef, createSignal, waitUntil } from "@motion-canvas/core";
 
 export default makeScene2D(function* (view) {
     // Main visuals
-    const code = createRef<Code>();
+    const tests = createRef<Code>();
     const linesize = createSignal(48);
 
     view.add(
         <Code
-            ref={code}
+            ref={tests}
             fontSize={48}
             code={`\
 int main() {
@@ -24,32 +19,29 @@ int main() {
     );
 
     // Transition in
-    const viewSize = view.size();
-    yield* zoomOutTransition(
-        new BBox(
-            viewSize.x / 4,
-            viewSize.y / 4,
-            viewSize.x / 2,
-            viewSize.y / 2,
-        ),
-    );
+    yield* zoomTransition();
 
+    // Test cases
     yield* waitUntil(
-        "hallo",
-        code().code.edit(0.6)`\
-function example() {
-${insert(`    // This is a comment
-`)}    console.log('${replace("Hello!", "Goodbye!")}');
-${remove(`    return 7;
-`)}}`,
+        "+tests",
+        tests().code.edit(0.6)`\
+int main() {
+    ${insert(`/*
+     * test cases here
+     */`)}
+}`,
     );
 
-    yield* code().code.edit(0.6)`\
-function example() {
-  ${insert(`// This is a comment
-  `)}console.log('${replace("Hello!", "Goodbye!")}');
-${remove(`  return 7;
-`)}}`;
+    // ???
+    yield* waitUntil(
+        "tests_confused",
+        tests().code.edit(0.6)`\
+int main() {
+    /*
+     * test cases here${insert("...?")}
+     */
+}`,
+    );
 
-    yield* code().code.append("\nconst two = 2;", 0.6);
+    yield* waitUntil("x");
 });
