@@ -11,8 +11,8 @@
 
 # Assignment build artifacts
 *.tar*
-build/
-assignment*/build/
+*.o
+*.pch
 
 # Motion Canvas files
 videos/node_modules/

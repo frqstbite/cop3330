@@ -1,12 +1,10 @@
 # This entire makefile is just a build orchestrator
-.PHONY: _validate
-include common.mk
+.PHONY: _validate _usage build test submit clean
 
 # Notify user to specify what assignment to build
-usage:
+_usage:
 	@echo 'Usage:'
-	@echo '  make clean'
-	@echo '  make [build|test|submit] ASSIGNMENT=[1|2]'
+	@echo '  make [build|test|submit|clean] ASSIGNMENT=[1|2|3]'
 
 # Validate assignment selection
 _validate:
@@ -19,22 +17,31 @@ _validate:
 
     # Validate that ASSIGNMENT is an integer within range
 	@case "$(ASSIGNMENT)" in                                         \
-        1|2 ) ;;                                                     \
+        1|2|3 ) ;;                                                     \
         ''|*[!0-9]* )                                                \
-            echo 'Error: ASSIGNMENT is not a valid integer.';        \
+            echo 'ERROR: ASSIGNMENT is not a valid integer.';        \
             $(MAKE) usage;                                           \
             exit 1 ;;                                                \
         * )                                                          \
-            echo 'Error: ASSIGNMENT is outside valid range [1, 2].'; \
+            echo 'ERROR: ASSIGNMENT is outside valid range [1, 3].'; \
             $(MAKE) usage;                                           \
             exit 1 ;;                                                \
     esac
 
-# Forward pipeline targets to the appropriate assignment makefile
 build: _validate
-	$(eval TARGET='assignment$(ASSIGNMENT)')
-	@$(MAKE) -C ./assignment$(ASSIGNMENT) build
+	@echo 'Building assignment $(ASSIGNMENT)...'
+	@$(MAKE) -C assignment$(ASSIGNMENT)/submission
+	@echo 'Built assignment $(ASSIGNMENT) to assignment$(ASSIGNMENT)/submission'
+
 test: _validate build
-	@$(MAKE) -C ./assignment$(ASSIGNMENT) test
+	@echo 'Running tests for assignment $(ASSIGNMENT)...'
+	@assignment$(ASSIGNMENT)/scripts/test.sh
+	@echo 'Tests passed!'
+
 submit: _validate test
-	@$(MAKE) -C ./assignment$(ASSIGNMENT) submit
+	@echo 'Submitting assignment $(ASSIGNMENT)...'
+	@assignment$(ASSIGNMENT)/scripts/submit.sh
+
+clean: _validate
+	@cd assignment$(ASSIGNMENT)/submission; ../scripts/clean.sh
+	@echo 'Cleaned up assignment $(ASSIGNMENT) build artifacts.'
