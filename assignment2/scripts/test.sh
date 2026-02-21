@@ -1,3 +1,3 @@
 #!/usr/bin/env sh
 
-sphere | diff -u ../scripts/sphere.out -
+./sphere | diff -u ../scripts/sphere.out -

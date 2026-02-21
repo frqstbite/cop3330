@@ -35,13 +35,14 @@ build: _validate
 
 test: _validate build
 	@echo 'Running tests for assignment $(ASSIGNMENT)...'
-	@cd assignment$(ASSIGNMENT); scripts/test.sh
+	@cd assignment$(ASSIGNMENT)/submission; ../scripts/test.sh
 	@echo 'Tests passed!'
 
 submit: _validate test clean
 	@echo 'Submitting assignment $(ASSIGNMENT)...'
-	@cd assignment$(ASSIGNMENT); scripts/submit.sh
+	@cd assignment$(ASSIGNMENT)/submission; ../scripts/submit.sh
 
 clean: _validate
 	@cd assignment$(ASSIGNMENT)/submission; ../scripts/clean.sh
+	@cd assignment$(ASSIGNMENT); rm -f *.tar{,.gz}
 	@echo 'Cleaned up assignment $(ASSIGNMENT) build artifacts.'
