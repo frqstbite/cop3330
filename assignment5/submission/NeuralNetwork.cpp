@@ -18,11 +18,15 @@ NeuralNetwork::NeuralNetwork(int num_blocks, int in_size, int hidden_size,
 }
 
 vector<double> NeuralNetwork::forward(const vector<double> &input) const {
-	vector<double> processed = blocks[0].forward(input); // First
+	vector<double> processed = input;
 
-	// Intermediate
-	for (int i = 1; i < blocks.size() - 1; i++)
-		processed = blocks[i].forward(processed);
+	if (blocks.size() > 1) {
+		processed = blocks[0].forward(input); // First
+
+		// Intermediate
+		for (int i = 1; i < blocks.size() - 1; i++)
+			processed = blocks[i].forward(processed);
+	}
 
 	return blocks[blocks.size() - 1].forward(processed); // Last
 }
