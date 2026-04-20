@@ -1,5 +1,5 @@
 class Date {
-  private:
+   private:
 	int month;
 	int day;
 	int year;
@@ -11,10 +11,10 @@ class Date {
 	bool isValid() const;
 	int sakamoto(int m, int d, int y) const;
 
-  public:
+   public:
 	Date();
 	Date(int m, int d, int y);
-	Date(const char *str);
+	Date(const char* str);
 
 	void Input();
 	int GetMonth() const;
@@ -24,7 +24,7 @@ class Date {
 	void Increment();
 	void Decrement();
 	int DayofWeek() const;
-	int Compare(const Date &d) const;
+	int Compare(const Date& d) const;
 	void ShowByDay() const;
 	void ShowByMonth() const;
 };

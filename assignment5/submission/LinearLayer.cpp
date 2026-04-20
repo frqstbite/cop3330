@@ -6,7 +6,7 @@ LinearLayer::LinearLayer(int in_size, int out_size)
 	weights.resize(output_size * input_size, 1.0);
 }
 
-vector<double> LinearLayer::forward(const vector<double> &input) const {
+vector<double> LinearLayer::forward(const vector<double>& input) const {
 	vector<double> result(output_size);
 
 	// Matrix multiplication
@@ -42,6 +42,6 @@ void LinearLayer::size() const {
 		 << ", Output size: " << output_size;
 }
 
-void LinearLayer::setFlatWeights(const vector<double> &newWeights) {
+void LinearLayer::setFlatWeights(const vector<double>& newWeights) {
 	weights = newWeights;
 }

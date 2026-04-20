@@ -30,7 +30,9 @@ void Polynomial::updateDegree() {
 
 // Constructors
 
-Polynomial::Polynomial() : Polynomial(DEFAULT_LETTER) { updateDegree(); }
+Polynomial::Polynomial() : Polynomial(DEFAULT_LETTER) {
+	updateDegree();
+}
 
 Polynomial::Polynomial(int a0) : Polynomial(DEFAULT_LETTER) {
 	for (int k = 0; k <= MAX_DEGREE; k++)
@@ -49,7 +51,7 @@ void Polynomial::clear() {
 int Polynomial::evaluate(int univariate) const {
 	int sum = 0;
 	for (int k = 0; k <= MAX_DEGREE; k++)
-		sum += coefficients[k] * pow(univariate, k); // a_n * x^n
+		sum += coefficients[k] * pow(univariate, k);  // a_n * x^n
 	return sum;
 }
 
@@ -76,15 +78,14 @@ bool Polynomial::setLetter(char univariate) {
 
 // Stream Operators
 
-istream &operator>>(istream &in, Polynomial &self) {
+istream& operator>>(istream& in, Polynomial& self) {
 	char letter;
 	in >> letter;
-	in.ignore(1); // Ignore semicolon
+	in.ignore(1);  // Ignore semicolon
 	bool valid = self.setLetter(letter);
 
 	// Read coefficients from input
 	for (int k = 0; k <= MAX_DEGREE; k++) {
-
 		if (valid)
 			// Valid input, accept coefficient
 			in >> self.coefficients[k];
@@ -99,20 +100,18 @@ istream &operator>>(istream &in, Polynomial &self) {
 			in.ignore(1);
 	}
 
-	self.updateDegree(); // Recalculate degree after changes
+	self.updateDegree();  // Recalculate degree after changes
 
 	return in;
 }
 
-ostream &operator<<(ostream &out, const Polynomial &self) {
+ostream& operator<<(ostream& out, const Polynomial& self) {
 	if (self.degree > -1) {
-
 		// Polynomial degree is an upper bound
 		for (int k = self.degree; k >= 0; k--) {
 			int coefficient = self.coefficients[k];
 
 			if (coefficient != 0) {
-
 				// Print coefficient sign
 				if (k == self.degree) {
 					// Negative leading terms should have a minus symbol
@@ -123,7 +122,7 @@ ostream &operator<<(ostream &out, const Polynomial &self) {
 					// their sign
 					out << ' ' << ((coefficient < 0) ? '-' : '+') << ' ';
 				}
-				coefficient = abs(coefficient); // Sign no longer matters
+				coefficient = abs(coefficient);	 // Sign no longer matters
 
 				// Print coefficient
 				if (coefficient != 1)
@@ -146,7 +145,7 @@ ostream &operator<<(ostream &out, const Polynomial &self) {
 }
 
 // Comparison Operators
-bool operator==(const Polynomial &a, const Polynomial &b) {
+bool operator==(const Polynomial& a, const Polynomial& b) {
 	// Letters don't match
 	if (a.letter != b.letter)
 		return false;
@@ -159,31 +158,31 @@ bool operator==(const Polynomial &a, const Polynomial &b) {
 	return true;
 }
 
-bool operator!=(const Polynomial &a, const Polynomial &b) {
-	return !(a == b); // Defined in terms of == operator
+bool operator!=(const Polynomial& a, const Polynomial& b) {
+	return !(a == b);  // Defined in terms of == operator
 }
 
-bool operator<(const Polynomial &a, const Polynomial &b) {
+bool operator<(const Polynomial& a, const Polynomial& b) {
 	for (int k = MAX_DEGREE; k >= 0; k--)
 		if (a.coefficients[k] != b.coefficients[k])
 			return a.coefficients[k] < b.coefficients[k];
 	return a.letter < b.letter;
 }
 
-bool operator<=(const Polynomial &a, const Polynomial &b) {
-	return (a < b) || (a == b); // Defined in terms of < and == operators
+bool operator<=(const Polynomial& a, const Polynomial& b) {
+	return (a < b) || (a == b);	 // Defined in terms of < and == operators
 }
 
-bool operator>(const Polynomial &a, const Polynomial &b) {
-	return !(a <= b); // Defined in terms of <= operator
+bool operator>(const Polynomial& a, const Polynomial& b) {
+	return !(a <= b);  // Defined in terms of <= operator
 }
 
-bool operator>=(const Polynomial &a, const Polynomial &b) {
-	return (a > b) || (a == b); // Defined in terms of > and == operators
+bool operator>=(const Polynomial& a, const Polynomial& b) {
+	return (a > b) || (a == b);	 // Defined in terms of > and == operators
 }
 
 // Arithmetic Operators
-Polynomial operator+(const Polynomial &a, const Polynomial &b) {
+Polynomial operator+(const Polynomial& a, const Polynomial& b) {
 	Polynomial sum(a.letter);
 
 	// Add coefficients
@@ -194,7 +193,7 @@ Polynomial operator+(const Polynomial &a, const Polynomial &b) {
 	return sum;
 }
 
-Polynomial operator-(const Polynomial &a, const Polynomial &b) {
+Polynomial operator-(const Polynomial& a, const Polynomial& b) {
 	Polynomial difference(a.letter);
 
 	// Subtract coefficients
@@ -205,16 +204,16 @@ Polynomial operator-(const Polynomial &a, const Polynomial &b) {
 	return difference;
 }
 
-Polynomial operator*(const Polynomial &a, const Polynomial &b) {
+Polynomial operator*(const Polynomial& a, const Polynomial& b) {
 	Polynomial product(a.letter);
 
 	// Multiply coefficients
 	for (int ka = 0; ka <= MAX_DEGREE; ka++)
-		if (a.coefficients[ka] != 0) // Skip zeroes in A
+		if (a.coefficients[ka] != 0)  // Skip zeroes in A
 			for (int kb = 0; kb <= MAX_DEGREE; kb++)
-				if (b.coefficients[kb] != 0)   // Skip zeroes in B
-					if (ka + kb <= MAX_DEGREE) // Truncate high degrees
-						product.coefficients[ka + kb] += // Combine exponents
+				if (b.coefficients[kb] != 0)	// Skip zeroes in B
+					if (ka + kb <= MAX_DEGREE)	// Truncate high degrees
+						product.coefficients[ka + kb] +=  // Combine exponents
 							a.coefficients[ka] * b.coefficients[kb];
 	product.updateDegree();
 

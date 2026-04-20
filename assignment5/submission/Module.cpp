@@ -2,7 +2,7 @@
 
 Module::Module() : weights{1.0} {}
 
-vector<double> Module::forward(const vector<double> &input) const {
+vector<double> Module::forward(const vector<double>& input) const {
 	if (input.size() > weights.size())
 		weights.resize(input.size());
 
@@ -12,6 +12,6 @@ vector<double> Module::forward(const vector<double> &input) const {
 	for (int i = 0; i < input.size(); i++) {
 		result[i] = input[i] * weights[i];
 	}
-	
+
 	return result;
 }

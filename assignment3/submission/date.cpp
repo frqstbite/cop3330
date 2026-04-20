@@ -51,7 +51,7 @@ bool Date::isValid() const {
 	if (day < 1 || day > getDaysInMonth())
 		return false;
 
-	return true; // Valid
+	return true;  // Valid
 }
 
 int Date::sakamoto(int m, int d, int y) const {
@@ -75,7 +75,7 @@ Date::Date(int m, int d, int y) : month(m), day(d), year(y) {
 }
 
 // Cast
-Date::Date(const char *str) {
+Date::Date(const char* str) {
 	string obj = str;
 
 	// Find positions of the slashes
@@ -115,11 +115,17 @@ void Date::Input() {
 	}
 }
 
-int Date::GetMonth() const { return month; }
+int Date::GetMonth() const {
+	return month;
+}
 
-int Date::GetDay() const { return day; }
+int Date::GetDay() const {
+	return day;
+}
 
-int Date::GetYear() const { return year; }
+int Date::GetYear() const {
+	return year;
+}
 
 bool Date::Set(int m, int d, int y) {
 	int currentMonth = month = m;
@@ -153,7 +159,7 @@ void Date::Decrement() {
 	if (day == 1) {
 		if (month == 1) {
 			if (year == 1900)
-				return; // Lower limit
+				return;	 // Lower limit
 			else
 				year--;
 
@@ -171,7 +177,7 @@ int Date::DayofWeek() const {
 	return sakamoto(month, day, year);
 }
 
-int Date::Compare(const Date &d) const {
+int Date::Compare(const Date& d) const {
 	// Years
 	if (year < d.year)
 		return -1;
@@ -223,7 +229,7 @@ void Date::ShowByDay() const {
 }
 
 void Date::ShowByMonth() const {
-	const char *sep = "    ";
+	const char* sep = "    ";
 
 	// Month    Year
 	switch (month) {
@@ -277,12 +283,11 @@ void Date::ShowByMonth() const {
 	// wd is 0-6, inclusive
 	for (int d = 1 - firstDay, wd = 0; d <= daysInMonth;
 		 d++, wd = (wd + 1) % 7) {
-
 		if (d < 1)
-			cout << "  "; // Negative days render empty
+			cout << "  ";  // Negative days render empty
 		else {
 			if (d < 10)
-				cout << '0'; // Extra 0 for single-digit numbers
+				cout << '0';  // Extra 0 for single-digit numbers
 			cout << d;
 		}
 
@@ -296,5 +301,5 @@ void Date::ShowByMonth() const {
 				cout << sep;
 	}
 
-	cout << endl; // For good measure c:
+	cout << endl;  // For good measure c:
 }

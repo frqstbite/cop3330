@@ -13,11 +13,11 @@ using namespace std;
 const int MAX_DEGREE = 10;
 
 class Polynomial {
-  private:
+   private:
 	// Fields
 	int coefficients[MAX_DEGREE + 1];
-	int degree; // In an ideal world this would be a getter
-				// but you have forced my hand.
+	int degree;	 // In an ideal world this would be a getter
+				 // but you have forced my hand.
 	char letter;
 
 	// Private Constructors
@@ -37,7 +37,7 @@ class Polynomial {
 	 */
 	void updateDegree();
 
-  public:
+   public:
 	// Constructors
 
 	/*
@@ -79,19 +79,19 @@ class Polynomial {
 	bool setLetter(char univariate);
 
 	// Stream Operators
-	friend istream &operator>>(istream &in, Polynomial &self);
-	friend ostream &operator<<(ostream &out, const Polynomial &self);
+	friend istream& operator>>(istream& in, Polynomial& self);
+	friend ostream& operator<<(ostream& out, const Polynomial& self);
 
 	// Comparison Operators
-	friend bool operator==(const Polynomial &a, const Polynomial &b);
-	friend bool operator!=(const Polynomial &a, const Polynomial &b);
-	friend bool operator<(const Polynomial &a, const Polynomial &b);
-	friend bool operator<=(const Polynomial &a, const Polynomial &b);
-	friend bool operator>(const Polynomial &a, const Polynomial &b);
-	friend bool operator>=(const Polynomial &a, const Polynomial &b);
+	friend bool operator==(const Polynomial& a, const Polynomial& b);
+	friend bool operator!=(const Polynomial& a, const Polynomial& b);
+	friend bool operator<(const Polynomial& a, const Polynomial& b);
+	friend bool operator<=(const Polynomial& a, const Polynomial& b);
+	friend bool operator>(const Polynomial& a, const Polynomial& b);
+	friend bool operator>=(const Polynomial& a, const Polynomial& b);
 
 	// Arithmetic Operators
-	friend Polynomial operator+(const Polynomial &a, const Polynomial &b);
-	friend Polynomial operator-(const Polynomial &a, const Polynomial &b);
-	friend Polynomial operator*(const Polynomial &a, const Polynomial &b);
+	friend Polynomial operator+(const Polynomial& a, const Polynomial& b);
+	friend Polynomial operator-(const Polynomial& a, const Polynomial& b);
+	friend Polynomial operator*(const Polynomial& a, const Polynomial& b);
 };

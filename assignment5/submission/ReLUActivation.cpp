@@ -5,7 +5,7 @@ ReLUActivation::ReLUActivation(double p_s, double n_s) {
 	setWeights({p_s, n_s});
 }
 
-vector<double> ReLUActivation::forward(const vector<double> &inputs) const {
+vector<double> ReLUActivation::forward(const vector<double>& inputs) const {
 	vector<double> result(inputs.size());
 
 	for (int i = 0; i < inputs.size(); i++)
@@ -19,6 +19,6 @@ void ReLUActivation::display() const {
 		 << ", negative slope = " << weights[1];
 }
 
-void ReLUActivation::setWeights(const vector<double> &newWeights) {
+void ReLUActivation::setWeights(const vector<double>& newWeights) {
 	weights = newWeights;
 }
