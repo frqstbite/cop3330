@@ -1,6 +1,7 @@
 #include <iostream>
+#include <sstream>
 #include "Stack.h"
-//#include "evaluateRPN.h"
+#include "evaluateRPN.h"
 
 int main() {
     // --- Test Stack functionality ---
@@ -19,11 +20,11 @@ int main() {
     }
     std::cout << std::endl;
     
-    /*/ --- Test evaluateRPN functionality ---
+    // --- Test evaluateRPN functionality ---
     std::cout << "Testing evaluateRPN:" << std::endl;
     std::string expr = "3 4 + 2 * 1 +";
     int result = evaluateRPN<int>(expr);
     std::cout << "RPN Expression: \"" << expr << "\" evaluates to " << result << std::endl;
-    */
+    
     return 0;
 }
