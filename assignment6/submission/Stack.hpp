@@ -2,7 +2,6 @@
 #define _STACK_HPP
 
 #include <string>
-#include "Stack.h"
 
 // Private
 

@@ -20,9 +20,6 @@ T evaluateRPN(const std::string& expr) {
 			T lhs = operands.pop();
 			T result;
 
-			//std::cout << "PERFORMING OPERATION " << lhs << ' ' << token.at(0)
-			//		  << ' ' << rhs << " = ";
-
 			switch (token.at(0)) {
 				case '+':
 					result = lhs + rhs;
@@ -37,8 +34,6 @@ T evaluateRPN(const std::string& expr) {
 					result = lhs / rhs;
 					break;
 			}
-
-			//std::cout << result << std::endl;
 
 			operands.push(result);
 			continue;
